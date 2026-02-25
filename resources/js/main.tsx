@@ -1,6 +1,7 @@
 import { createInertiaApp } from '@inertiajs/react'
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client'
+import Layout from '@/Layout';
 
 import "@css/main.css";
 
@@ -12,7 +13,9 @@ createInertiaApp({
     setup({ el, App, props }) {
         createRoot(el).render(
             <StrictMode>
-                <App {...props} />
+                <Layout>
+                    <App {...props} />
+                </Layout>
             </StrictMode>
         )
     },
