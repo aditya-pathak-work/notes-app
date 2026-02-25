@@ -37,7 +37,16 @@
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "resources/js/*"
+      ],
+      "@css/*": [
+        "resources/css/*"
+      ]
+    },
   },
   "include": [
     "resources/js/**/*"
