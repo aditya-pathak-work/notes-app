@@ -10,4 +10,9 @@ class Note extends Model
 {
     use HasFactory;
     use HasUlids;
+
+    protected $fillable = [
+        'title',
+        'content',
+    ];
 }
