@@ -26,12 +26,12 @@ export default function NoteCard({ note }: Props) {
 
       <Link href={`/notes/${note.id}`} className="">
         <Card className="h-full gap-y-3">
-          <CardHeader>
+          {note.title && <CardHeader>
             <CardTitle>{note.title}</CardTitle>
-          </CardHeader>
-          <CardContent>
+          </CardHeader>}
+          {note.content && <CardContent>
             <p className="text-muted-foreground wrap-break-word">{truncateContent(note.content)}</p>
-          </CardContent>
+          </CardContent>}
         </Card>
       </Link>
     </div>

@@ -126,9 +126,9 @@ export default function NotesEdit({ note }: Props) {
 
             {/* display note */}
             < div className="w-full h-full flex flex-col" >
-                <input name="title" placeholder="Title" className={`text-4xl focus-visible:bg-muted focus-visible:outline-none px-3 py-2 leading-0.5 w-full ${!formData.title && "italic"}`} value={formData.title} onChange={handleInput} />
+                <input name="title" placeholder="Title" className={`text-4xl focus-visible:bg-muted focus-visible:outline-none px-3 py-2 leading-0.5 w-full ${!formData.title && "italic"}`} value={formData.title || ""} onChange={handleInput} />
                 <hr className="my-2 border-gray-300" />
-                <textarea name="content" placeholder="Content" className={`flex-1 focus-visible:bg-muted focus-visible:outline-none px-3 py-2 w-full resize-none ${!formData.content && "italic"}`} value={formData.content} onChange={handleInput} />
+                <textarea name="content" placeholder="Content" className={`flex-1 focus-visible:bg-muted focus-visible:outline-none px-3 py-2 w-full resize-none ${!formData.content && "italic"}`} value={formData.content || ""} onChange={handleInput} />
             </div >
         </>
     );

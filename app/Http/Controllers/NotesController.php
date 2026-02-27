@@ -13,6 +13,17 @@ class NotesController extends Controller
      */
     public function index() // GET /
     {
+        Note::where(function ($query) {
+            $query->where('title', '')
+                ->orWhereNull('title');
+        })
+            ->where(function ($query) {
+                $query->where('content', '')
+                    ->orWhereNull('content');
+            })
+            ->delete();
+
+
         return Inertia::render('Notes/Index', [
             "notes" => Note::all(),
         ]);
@@ -64,8 +75,8 @@ class NotesController extends Controller
     {
         // 1. Validate input
         $data = $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'title' => 'max:255',
+            'content' => '',
         ]);
 
         // 2. Update the note
