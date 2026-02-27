@@ -18,13 +18,13 @@ export default function NoteCard({ note }: Props) {
           className="group/button group-hover/card:bg-black/10 group-hover/card:text-muted-foreground rounded-none rounded-bl-lg hover:bg-destructive cursor-pointer duration-50"
           size="icon"
           variant="ghost"
-          onClick={() => router.delete(`/note/${note.id}`)}
+          onClick={() => router.delete(`/notes/${note.id}`)}
         >
           <Trash2 className="group-hover/button:text-white transition duration-50" />
         </Button>
       </div>
 
-      <Link href={`/note/${note.id}`} className="">
+      <Link href={`/notes/${note.id}`} className="">
         <Card className="h-full gap-y-3">
           <CardHeader>
             <CardTitle>{note.title}</CardTitle>

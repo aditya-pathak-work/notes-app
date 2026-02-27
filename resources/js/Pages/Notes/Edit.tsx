@@ -48,7 +48,7 @@ export default function NotesEdit({ note }: Props) {
             console.log("Saving...", formData);
 
             await new Promise((res, rej) => {
-                router.put(`/note/${note.id}`, formData, {
+                router.put(`/notes/${note.id}`, formData, {
                     preserveScroll: true,
                     preserveState: true,
                     onError: rej,
@@ -118,7 +118,7 @@ export default function NotesEdit({ note }: Props) {
                 <div className="gap-2 flex items-center">
                     <Status />
                     {status !== "idle" && <Button size="sm" onClick={handleSaveBtnClick} className="cursor-pointer bg-green-600 hover:bg-green-700 text-white" disabled={status === "saving"}>Save</Button>}
-                    <Button size="sm" className="cursor-pointer bg-red-600 hover:bg-red-700 text-white" onClick={() => router.delete(`/note/${note.id}`)}>Delete</Button>
+                    <Button size="sm" className="cursor-pointer bg-red-600 hover:bg-red-700 text-white" onClick={() => router.delete(`/notes/${note.id}`)}>Delete</Button>
                 </div>
             </div >
 
