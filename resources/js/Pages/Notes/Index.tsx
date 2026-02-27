@@ -18,7 +18,7 @@ export default function NotesIndex({ notes }: Props) {
                 {notes.length > 0 && <Button className="cursor-pointer text-muted-foreground" size="icon" variant="outline" onClick={() => router.post("/notes")}><Plus /></Button>}
             </div>
 
-            <div className="grid grid-cols-3 gap-4 p-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-3">
                 {notes.length > 0 ? (
                     notes.map((note) => <NoteCard key={note.id} note={note} />)
                 ) : (
