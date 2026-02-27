@@ -9,7 +9,7 @@ interface Props {
     notes: Note[];
 }
 
-export default function Notes({ notes }: Props) {
+export default function NotesIndex({ notes }: Props) {
     return (
         <>
             <Head title="Notes" />

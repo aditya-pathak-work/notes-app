@@ -13,7 +13,7 @@ const SAVE_INTERVAL = 3000; // 3 seconds
 
 type SaveStatus = "idle" | "saving" | "saved" | "pending" | "error";
 
-export default function NoteEdit({ note }: Props) {
+export default function NotesEdit({ note }: Props) {
     const [formData, setFormData] = useState({
         title: note.title,
         content: note.content,

@@ -10,14 +10,14 @@ class NoteController extends Controller
 {
     public function index()
     {
-        return Inertia::render('NotesGrid', [
+        return Inertia::render('Notes/Index', [
             "notes" => Note::all(),
         ]);
     }
 
     public function editNote(Note $note)
     {
-        return Inertia::render('NoteEdit', [
+        return Inertia::render('Notes/Edit', [
             "note" => $note,
         ]);
     }
