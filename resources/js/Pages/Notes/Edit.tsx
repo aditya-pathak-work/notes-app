@@ -40,12 +40,20 @@ export default function NotesEdit({ note }: Props) {
 
         setStatus("saving");
 
+        if (timeoutRef.current) {
+            clearTimeout(timeoutRef.current);
+        }
+
         try {
             console.log("Saving...", formData);
 
-            router.put(`/note/${note.id}`, formData, {
-                preserveScroll: true,
-                preserveState: true,
+            await new Promise((res, rej) => {
+                router.put(`/note/${note.id}`, formData, {
+                    preserveScroll: true,
+                    preserveState: true,
+                    onError: rej,
+                    onSuccess: res
+                });
             });
 
             setStatus("saved");
