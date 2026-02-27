@@ -28,12 +28,9 @@ export default function NoteCard({ note }: Props) {
         <Card className="h-full gap-y-3">
           <CardHeader>
             <CardTitle>{note.title}</CardTitle>
-            {/* <CardAction className="">
-
-            </CardAction> */}
           </CardHeader>
           <CardContent>
-            <p className="text-muted-foreground">{truncateContent(note.content)}</p>
+            <p className="text-muted-foreground wrap-break-word">{truncateContent(note.content)}</p>
           </CardContent>
         </Card>
       </Link>
